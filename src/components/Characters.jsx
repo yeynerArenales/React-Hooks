@@ -1,5 +1,6 @@
 import React, { useState, useReducer, useMemo, useRef } from "react";
 import UseCharacter from "../hooks/UseCharacter";
+import Search from "./Search";
 
 const initialState = {
   favorites: [],
@@ -59,14 +60,7 @@ const Characters = () => {
         <li key={favorite.id}>{favorite.name}</li>
       ))}
 
-      <div className="search">
-        <input
-          type="text"
-          ref={searchInput}
-          value={search}
-          onChange={handleSearch}
-        />
-      </div>
+      <Search search={search} searchInput={searchInput} handleSearch={handleSearch}/>
 
       {filteredUsers.map((character) => (
         <div className="item" key={character.id}>
