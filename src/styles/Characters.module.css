@@ -1,0 +1,4 @@
+.Characters{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useReducer, useMemo, useRef } from "react";
 import UseCharacter from "../hooks/UseCharacter";
 import Search from "./Search";
+import styles from "../styles/Characters.module.css"
 
 const initialState = {
   favorites: [],
@@ -55,7 +56,7 @@ const Characters = () => {
 
 
   return (
-    <div className="Characters">
+    <div className={styles.Characters}>
       {favorites.favorites.map((favorite) => (
         <li key={favorite.id}>{favorite.name}</li>
       ))}
