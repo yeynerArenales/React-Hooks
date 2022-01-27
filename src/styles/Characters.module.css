@@ -1,7 +1,18 @@
-.Characters{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #24282F;
-    flex-wrap: wrap;
+body {
+  background-color: #24282f;
+}
+
+.Characters {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Search {
+  margin-top: 15px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

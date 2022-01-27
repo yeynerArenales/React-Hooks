@@ -56,15 +56,16 @@ const Characters = () => {
 
   return (
     <div>
-      {favorites.favorites.map((favorite) => (
+      {/* {favorites.favorites.map((favorite) => (
         <li key={favorite.id}>{favorite.name}</li>
-      ))}
-
-      <Search
-        search={search}
-        searchInput={searchInput}
-        handleSearch={handleSearch}
-      />
+      ))} */}
+      <div className={styles.Search}>
+        <Search
+          search={search}
+          searchInput={searchInput}
+          handleSearch={handleSearch}
+        />
+      </div>
       <div className={styles.Characters}>
         {filteredUsers.map((character) => (
           <Character
