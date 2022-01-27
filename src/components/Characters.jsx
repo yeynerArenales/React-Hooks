@@ -1,13 +1,14 @@
 import React, { useState, useReducer, useMemo, useRef } from "react";
 import UseCharacter from "../hooks/UseCharacter";
 import Search from "./Search";
-import styles from "../styles/Characters.module.css"
+import styles from "../styles/Characters.module.css";
+import Character from "./Character";
 
 const initialState = {
   favorites: [],
 };
 
-const apiUrl = "https://rickandmortyapi.com/api/character/"
+const apiUrl = "https://rickandmortyapi.com/api/character/";
 
 const favoriteReducer = (state, action) => {
   switch (action.type) {
@@ -22,14 +23,13 @@ const favoriteReducer = (state, action) => {
 };
 
 const Characters = () => {
-
   const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
 
   const [search, setSearch] = useState("");
 
   const searchInput = useRef(null);
 
-  const characters = UseCharacter(apiUrl)
+  const characters = UseCharacter(apiUrl);
 
   const handleSearch = () => {
     setSearch(searchInput.current.value);
@@ -54,23 +54,34 @@ const Characters = () => {
     });
   };
 
-
   return (
-    <div className={styles.Characters}>
+    <div>
       {favorites.favorites.map((favorite) => (
         <li key={favorite.id}>{favorite.name}</li>
       ))}
 
-      <Search search={search} searchInput={searchInput} handleSearch={handleSearch}/>
-
-      {filteredUsers.map((character) => (
-        <div className="item" key={character.id}>
-          <h2>{character.name}</h2>
-          <button type="button" onClick={() => handleClick(character)}>
+      <Search
+        search={search}
+        searchInput={searchInput}
+        handleSearch={handleSearch}
+      />
+      <div className={styles.Characters}>
+        {filteredUsers.map((character) => (
+          <Character
+            key={character.id}
+            name={character.name}
+            urlImage={character.image}
+            status={character.status}
+            species={character.species}
+            url={character.url}
+            locationName={character.location.name}
+            gender={character.gender}
+          />
+          /* <button type="button" onClick={() => handleClick(character)}>
             Agregar a Favoritos
-          </button>
-        </div>
-      ))}
+          </button> */
+        ))}
+      </div>
     </div>
   );
 };
