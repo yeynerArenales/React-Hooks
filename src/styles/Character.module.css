@@ -1,0 +1,90 @@
+.Character{
+    width: auto;
+    min-width: 600px;
+    min-height: 200px;
+    height: auto;
+    margin: 15px;
+    display: flex;
+    border-radius: 15px;
+    background-color: #3C3E44;
+    text-align: left;
+}
+
+.Image{
+    object-fit: cover;
+    width: 220px;
+    height: 200px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.Info{
+    color: #fff;
+    padding: 12px;
+}
+
+.Title{
+    margin: 0px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.Title:hover{
+    color: rgb(255, 152, 0);;
+}
+
+.Status{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.StatusInfo{
+    width: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.DeadCircle{
+    height: 10px;
+    width: 10px;
+    margin-top: 3px;
+    border-radius: 100%;
+    background-color: #D63D2E;
+}
+
+.AliveCircle{
+    height: 10px;
+    width: 10px;
+    margin-top: 3px;
+    border-radius: 100%;
+    background-color: #55CC44;
+}
+
+.UnknownCircle{
+    height: 10px;
+    width: 10px;
+    margin-top: 3px;
+    border-radius: 100%;
+    background-color: #448fcc;
+}
+
+.SubTitle{
+    font-size: 16px;
+    color: #9E9E9E;
+    font-weight: 600;
+}
+
+.Desc{
+    margin-top: 15px;
+}
+
+.Content{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0px;
+}
