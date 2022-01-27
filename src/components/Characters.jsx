@@ -1,29 +1,30 @@
-import React, { useState, useReducer, useMemo, useRef } from "react";
+//import React, { useState, useReducer, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import UseCharacter from "../hooks/UseCharacter";
 import Search from "./Search";
 import styles from "../styles/Characters.module.css";
 import Character from "./Character";
 
-const initialState = {
-  favorites: [],
-};
+// const initialState = {
+//   favorites: [],
+// };
 
 const apiUrl = "https://rickandmortyapi.com/api/character/";
 
-const favoriteReducer = (state, action) => {
-  switch (action.type) {
-    case "ADD_TO_FAVORITE":
-      return {
-        ...state,
-        favorites: [...state.favorites, action.payload],
-      };
-    default:
-      return state;
-  }
-};
+// const favoriteReducer = (state, action) => {
+//   switch (action.type) {
+//     case "ADD_TO_FAVORITE":
+//       return {
+//         ...state,
+//         favorites: [...state.favorites, action.payload],
+//       };
+//     default:
+//       return state;
+//   }
+// };
 
 const Characters = () => {
-  const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
+  //const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
 
   const [search, setSearch] = useState("");
 
@@ -47,12 +48,12 @@ const Characters = () => {
     [characters, search]
   );
 
-  const handleClick = (favorite) => {
-    dispatch({
-      type: "ADD_TO_FAVORITE",
-      payload: favorite,
-    });
-  };
+  // const handleClick = (favorite) => {
+  //   dispatch({
+  //     type: "ADD_TO_FAVORITE",
+  //     payload: favorite,
+  //   });
+  // };
 
   return (
     <div>
